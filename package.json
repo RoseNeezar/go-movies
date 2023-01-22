@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "yarn --cwd ./client install",
-    "dev": "concurrently \"make dev\" \"yarn --cwd ./client dev\"",
+    "dev": "concurrently \"docker-compose -f docker-compose.dev.yml up -d\" \"make dev\" \"yarn --cwd ./client dev\"",
     "build": "docker-compose -f docker-compose.dev.yml up --build",
     "stop": "docker-compose -f docker-compose.dev.yml down"
   },
